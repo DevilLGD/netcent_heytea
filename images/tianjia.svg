@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>房间管理/添加icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="32" cy="32" r="23.1111111"></circle>
+        <filter x="-11.9%" y="-7.6%" width="123.8%" height="123.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.196078431   0 0 0 0 0.729411765   0 0 0 0 0.752941176  0 0 0 0.599131337 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切换家庭-家庭管理" transform="translate(-295.000000, -732.000000)">
+            <g id="编组-3" transform="translate(295.000000, 732.000000)">
+                <g id="房间管理/添加icon">
+                    <g id="编组-9">
+                        <g>
+                            <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="64" height="64"></rect>
+                            <g id="椭圆形">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                <use fill="#32BAC0" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            </g>
+                            <g id="编组" transform="translate(19.555556, 19.555556)" fill="#FFFFFF">
+                                <path d="M1.83794872,10.3703704 L23.0509402,10.3703704 C24.0660112,10.3703704 24.8888889,11.1503898 24.8888889,12.1125926 C24.8888889,13.0747954 24.0660112,13.8548148 23.0509402,13.8548148 L1.83794872,13.8548148 C0.82287767,13.8548148 0,13.0747954 0,12.1125926 C0,11.1503898 0.82287767,10.3703704 1.83794872,10.3703704 Z" id="矩形"></path>
+                                <path d="M10.3703704,23.0509402 L10.3703704,1.83794872 C10.3703704,0.82287767 11.1503898,0 12.1125926,0 C13.0747954,0 13.8548148,0.82287767 13.8548148,1.83794872 L13.8548148,23.0509402 C13.8548148,24.0660112 13.0747954,24.8888889 12.1125926,24.8888889 C11.1503898,24.8888889 10.3703704,24.0660112 10.3703704,23.0509402 Z" id="矩形备份-6"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

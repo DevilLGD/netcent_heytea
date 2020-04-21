@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="29px" viewBox="0 0 28 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>公共/未勾选</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="添加房间-客厅（有设备状态）" transform="translate(-338.000000, -326.000000)">
+            <g id="设备1备份" transform="translate(0.000000, 294.500000)">
+                <g id="编组-5" transform="translate(338.000000, 32.000000)">
+                    <g id="房间管理/未勾选icon">
+                        <g id="房间管理/未点删除icon">
+                            <g id="首页/手动添加icon">
+                                <g id="编组-9">
+                                    <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="28" height="28"></rect>
+                                    <path d="M14,24.1111111 C19.5842125,24.1111111 24.1111111,19.5842125 24.1111111,14 C24.1111111,8.41578753 19.5842125,3.88888889 14,3.88888889 C8.41578753,3.88888889 3.88888889,8.41578753 3.88888889,14 C3.88888889,19.5842125 8.41578753,24.1111111 14,24.1111111 Z M14,22.8044444 C9.1374396,22.8044444 5.19555556,18.8625604 5.19555556,14 C5.19555556,9.1374396 9.1374396,5.19555556 14,5.19555556 C18.8625604,5.19555556 22.8044444,9.1374396 22.8044444,14 C22.8044444,18.8625604 18.8625604,22.8044444 14,22.8044444 Z" id="椭圆形" fill="#979797" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

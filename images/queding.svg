@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>地区位置/确定</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="家庭管理-家庭位置-2" transform="translate(-340.000000, -442.000000)">
+            <g id="弹窗">
+                <g id="选择城市" transform="translate(0.000000, 430.000000)">
+                    <g id="编组-4" transform="translate(340.000000, 12.000000)">
+                        <g id="地区位置/选择icon">
+                            <g id="编组-9">
+                                <g>
+                                    <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="26" height="26"></rect>
+                                    <path d="M10.8690768,18.2592366 L4.22785001,11.5323758 C3.89157061,11.1917603 3.34283888,11.1882452 3.0022234,11.5245246 C2.66160791,11.860804 2.65809282,12.4095357 2.99437222,12.7501512 L10.2875073,20.1373262 C10.6401247,20.4944903 11.2214596,20.4783816 11.5537572,20.1022386 L23.0383999,7.10223858 C23.3553009,6.74352356 23.321404,6.19582852 22.962689,5.87892746 C22.603974,5.5620264 22.056279,5.59592331 21.7393779,5.95463833 L10.8690768,18.2592366 Z" id="路径-4备份-3" fill="#666666" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

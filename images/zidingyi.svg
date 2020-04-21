@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>自定义</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="添加房间" transform="translate(-27.000000, -525.000000)">
+            <g id="组件备份" transform="translate(12.000000, 150.000000)">
+                <g id="自定义" transform="translate(0.000000, 360.000000)">
+                    <g id="客厅">
+                        <g id="编组" transform="translate(15.000000, 15.000000)">
+                            <g id="公共/添加房间/自定义">
+                                <g id="编组-10">
+                                    <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="46" height="46"></rect>
+                                    <g id="编组-9" transform="translate(8.944444, 7.666667)" fill="#666666">
+                                        <rect id="矩形" x="0" y="14.0555556" width="28.1111111" height="2.14666667" rx="0.84"></rect>
+                                        <path d="M0.84,14.0555556 L27.2711111,14.0555556 C27.7350303,14.0555556 28.1111111,14.4316364 28.1111111,14.8955556 L28.1111111,15.3622222 C28.1111111,15.8261414 27.7350303,16.2022222 27.2711111,16.2022222 L0.84,16.2022222 C0.37608081,16.2022222 -1.62454392e-15,15.8261414 -1.77635684e-15,15.3622222 L-1.77635684e-15,14.8955556 C-1.94419286e-15,14.4316364 0.37608081,14.0555556 0.84,14.0555556 Z" id="矩形备份-7" transform="translate(14.055556, 15.128889) rotate(-90.000000) translate(-14.055556, -15.128889) "></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
