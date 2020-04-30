@@ -3,10 +3,13 @@ import 'dart:async';
 //import 'package:tobias/tobias.dart' as tobias;
 class tobias {
   static Future<String> aliPayVersion() async {
-    return await [];
+    return "";
   }
   static Future<bool> isAliPayInstalled() async {
-    return await [];
+    return false;
+  }
+  static Future<Map> alipay() async {
+    return Map();
   }
 }
 
@@ -16,8 +19,9 @@ class AlipayUtils {
   static Future<String> alipayVersion = tobias.aliPayVersion();
 
   static Future<Map> alipay(String order, {bool inSandBox = false}) {
-    final evn = inSandBox ? tobias.AliPayEvn.SANDBOX : tobias.AliPayEvn.ONLINE;
-    return tobias.aliPay(order, evn: evn);
+    return tobias.alipay();
+    //final evn = inSandBox ? tobias.AliPayEvn.SANDBOX : tobias.AliPayEvn.ONLINE;
+    //return tobias.aliPay(order, evn: evn);
   }
 
   static String resultStatus(Map result) {
