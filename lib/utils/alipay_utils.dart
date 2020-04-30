@@ -1,6 +1,14 @@
 import 'dart:async';
 
-import 'package:tobias/tobias.dart' as tobias;
+//import 'package:tobias/tobias.dart' as tobias;
+class tobias {
+  static Future<String> aliPayVersion() async {
+    return await [];
+  }
+  static Future<bool> isAliPayInstalled() async {
+    return await [];
+  }
+}
 
 class AlipayUtils {
   static Future<bool> isAliPayInstalled = tobias.isAliPayInstalled();
