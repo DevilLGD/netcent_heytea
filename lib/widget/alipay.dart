@@ -1,9 +1,7 @@
 import 'dart:async';
 
-import 'package:fake_alipay/fake_alipay.dart';
+import 'package:heytea_kit/utils/alipay_utils.dart';
 import 'package:flutter/widgets.dart';
-
-export 'package:fake_alipay/fake_alipay.dart';
 
 typedef AlipayListener = void Function(AlipayResp response);
 
@@ -32,7 +30,7 @@ class _AlipayBuilderState extends State<AlipayBuilder> {
     super.initState();
 
     if (widget.listener != null) {
-      _paySubscription = widget.alipay.payResp().listen(widget.listener);
+      //_paySubscription = widget.alipay.payResp().listen(widget.listener);
     }
   }
 
