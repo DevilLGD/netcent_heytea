@@ -23,10 +23,10 @@ dependencies:
   # https://pub.dev/packages/decimal
   decimal: ^0.3.5
   # https://pub.dev/packages/fake_alipay
-  fake_alipay:
+  #fake_alipay:
     # 我们自己fork了一个分支，更新了AlipaySDK
     # https://github.com/mingchaogui/fake_alipay
-    git: https://github.com/mingchaogui/fake_alipay.git
+    #git: https://github.com/mingchaogui/fake_alipay.git
   # https://github.com/theyakka/fluro
   fluro: ^1.6.3
   # https://pub.dev/packages/fluwx
