@@ -1,25 +1,20 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 export 'package:video_player/video_player.dart';
 
-typedef HasSignIn = bool Function();
-typedef APITokenGenerator = String Function();
-
 class HeyTeaKit {
-  static const MethodChannel _channel = const MethodChannel('heytea_kit');
+  static const String packageName = 'heytea_kit';
+  static const MethodChannel _channel = const MethodChannel(packageName);
 
   static Future<String> get platformVersion async {
     final String version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
 
-  static String get packageName => _channel.name;
-
-  // 在APP启动时初始化 HeyTea Kit 的配置
+  /// 请在APP启动时配置 HeyTeaKit
   static HeyTeaKitConfig config;
 
   static popRoute(BuildContext context) {
@@ -31,23 +26,28 @@ class HeyTeaKit {
   }
 }
 
+typedef HasSignIn = bool Function();
+typedef AppVersionCodeGetter = int Function();
+typedef APIBaseUrlsGetter = Future<List<String>> Function();
+typedef APITokenGenerator = Future<String> Function();
+
 class HeyTeaKitConfig {
   final BuildContext buildContext;
 
-  /// 获取登录状态
   final HasSignIn hasSignIn;
-
-  /// 返回登录页
   final WidgetBuilder navigateToSignIn;
-
-  final List<String> apiBaseUrls;
+  final AppVersionCodeGetter appVersionCodeGetter;
+  final APIBaseUrlsGetter apiBaseUrlsGetter;
   final APITokenGenerator apiTokenGenerator;
 
   const HeyTeaKitConfig(
     this.buildContext, {
+    // 获取登录状态
     this.hasSignIn,
+    // 返回登录页
     this.navigateToSignIn,
-    this.apiBaseUrls,
+    this.appVersionCodeGetter,
+    this.apiBaseUrlsGetter,
     this.apiTokenGenerator,
   });
 }

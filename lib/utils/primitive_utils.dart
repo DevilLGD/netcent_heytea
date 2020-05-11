@@ -10,6 +10,13 @@ int booToInt(bool value) {
   return value != null && value ? 1 : 0;
 }
 
+T findWithString<T>(Iterable<T> values, String match) {
+  return values?.firstWhere(
+    (value) => value.toString() == match,
+    orElse: () => null,
+  );
+}
+
 T firstOrNull<T>(Iterable<T> iterable) {
   if (iterable != null && iterable.isNotEmpty) {
     return iterable.first;
@@ -19,7 +26,9 @@ T firstOrNull<T>(Iterable<T> iterable) {
 }
 
 T getOrNull<T>(Iterable<T> iterable, int index) {
-  if (isEmptyIterable(iterable) == false && index != null && index < iterable.length) {
+  if (isEmptyIterable(iterable) == false &&
+      index != null &&
+      index < iterable.length) {
     if (iterable is List) {
       return (iterable as List)[index];
     } else {
@@ -66,7 +75,6 @@ bool equalsIterable(Iterable a, Iterable b) {
 }
 
 extension StringExt on String {
-
   /// 抹除末尾的0
   String stripTrailingZeros() {
     final pattern = RegExp(r'0+$');

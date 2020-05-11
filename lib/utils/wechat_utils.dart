@@ -10,20 +10,6 @@ class WechatUtils {
     return fluwx.isWeChatInstalled;
   }
 
-  static Future<bool> registerWxApi({
-    String appId,
-    bool doOnIOS: true,
-    bool doOnAndroid: true,
-    String universalLink,
-  }) {
-    return fluwx.registerWxApi(
-      appId: appId,
-      doOnIOS: true,
-      doOnAndroid: true,
-      universalLink: universalLink,
-    );
-  }
-
   /// 实际上，像shareToWeChat or payWithWeChat这种的函数，底层上是调用了原生SDK的sendRequest方法，
   /// 所以他们的返回结果意义不大，他们的返回结果仅仅是sendRequest的返回值。
   /// 为了获取真实的回调，你应该这样做：
@@ -47,21 +33,6 @@ class WechatUtils {
       nonceStr: nonceStr,
       timeStamp: timeStamp,
       sign: sign,
-    );
-  }
-
-  static StreamSubscription<T>
-      listenToResponseEvent<T extends fluwx.BaseWeChatResponse>(
-    void onData(T event), {
-    Function onError,
-    void onDone(),
-    bool cancelOnError,
-  }) {
-    return fluwx.weChatResponseEventHandler.listen(
-      onData,
-      onError: onError,
-      onDone: onDone,
-      cancelOnError: cancelOnError,
     );
   }
 }

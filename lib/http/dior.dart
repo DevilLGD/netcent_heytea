@@ -3,32 +3,40 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio_flutter_transformer/dio_flutter_transformer.dart';
+import 'package:flutter/foundation.dart';
 import 'package:heytea_kit/entity/response/responses.dart';
 import 'package:heytea_kit/exception/api_exception.dart';
+import 'package:heytea_kit/heytea_kit.dart';
 import 'package:heytea_kit/http/dio_interceptors.dart';
 import 'package:heytea_kit/logger.dart';
 import 'package:heytea_kit/toast.dart';
 import 'package:heytea_kit/utils/error_utils.dart';
 
 class Dior {
-  static final appDio = _newDioInstance();
+  static final appDio = newDioInstance();
 
-  static Dio _newDioInstance() {
+  static Dio newDioInstance({
+    Duration connectTimeout = const Duration(seconds: 30),
+    Duration receiveTimeout = const Duration(seconds: 30),
+    String baseUrl,
+    ResponseType responseType = ResponseType.json,
+    String contentType = Headers.jsonContentType,
+    bool receiveDataWhenStatusError = false
+  }) {
     String platformType;
-    try {
-      platformType = Platform.operatingSystem;
-    } catch (error) {
-      // 默认是web啦
+    if (kIsWeb) {
       platformType = "web";
+    } else {
+      platformType = Platform.operatingSystem;
     }
 
     final options = BaseOptions(
-      baseUrl: null,
-      connectTimeout: const Duration(seconds: 30).inMilliseconds,
-      contentType: Headers.jsonContentType,
-      receiveDataWhenStatusError: false,
-      receiveTimeout: const Duration(seconds: 30).inMilliseconds,
-      responseType: ResponseType.json,
+      connectTimeout: connectTimeout?.inMilliseconds,
+      receiveTimeout: receiveTimeout?.inMilliseconds,
+      baseUrl: baseUrl,
+      responseType: responseType,
+      contentType: contentType,
+      receiveDataWhenStatusError: receiveDataWhenStatusError,
     );
 
     final dio = Dio(options);
@@ -37,7 +45,7 @@ class Dior {
     dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     // A dio transformer especially for flutter, by which the json decoding will be in background with [compute] function.
     dio.transformer = FlutterTransformer();
-    dio.options.headers["version"] = 666;
+    dio.options.headers["version"] = HeyTeaKit.config?.appVersionCodeGetter();
     dio.options.headers["platformType"] = platformType;
 
     return dio;
@@ -60,17 +68,14 @@ class Dior {
   }
 
   /// 一般场景下处理异常的逻辑
-  static void handleError(Object obj) {
-    HeyTeaLogger().e(obj);
-
-    final errMessage = ErrorUtils.messageFrom(obj);
-    HeyTeaToast.showFailure(errMessage);
+  static void handleError(dynamic error) {
+    HeyTeaLogger().e(error);
+    HeyTeaToast.showError(error);
   }
 
-  static String returnHandleError(Object obj) {
-    HeyTeaLogger().e(obj);
-
-    return ErrorUtils.messageFrom(obj);
+  static String returnHandleError(Object error) {
+    HeyTeaLogger().e(error);
+    return ErrorUtils.messageFrom(error);
   }
 
   /// 转换返回数据为一个本地模型

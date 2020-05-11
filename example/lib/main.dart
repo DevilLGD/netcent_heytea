@@ -32,16 +32,23 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-    HeyTeaKit.config = HeyTeaKitConfig(context,
-        hasSignIn: () => true,
-        navigateToSignIn: (context) => HomeScreen(),
-        apiBaseUrls: [APIConst.gemiBaseUrl, APIConst.laixinBaseUrl]);
+    HeyTeaKit.config = HeyTeaKitConfig(
+      context,
+      hasSignIn: () => true,
+      navigateToSignIn: (context) => HomeScreen(),
+      appVersionCodeGetter: () => 1,
+      apiBaseUrlsGetter: () async => [
+        APIConst.gemiBaseUrl,
+        APIConst.laixinBaseUrl,
+      ],
+      apiTokenGenerator: () async => "666666",
+    );
     loadPackageInfo();
   }
 
   @override
   Widget build(BuildContext context) {
-    final app = MaterialApp(
+    return MaterialApp(
       home: Scaffold(body: SplashScreen()),
       locale: const Locale("zh", "CN"),
       localizationsDelegates: const [
@@ -50,6 +57,7 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate
       ],
       navigatorObservers: [BotToastNavigatorObserver()],
+      builder: BotToastInit(),
       onGenerateRoute: Router.appRouter.generator,
       supportedLocales: [
         const Locale.fromSubtags(languageCode: "zh", countryCode: "CN"),
@@ -58,7 +66,7 @@ class _MyAppState extends State<MyApp> {
         const Locale.fromSubtags(languageCode: "zh", countryCode: "MO"),
         const Locale.fromSubtags(languageCode: "en", countryCode: "US")
       ],
-      title: _appName ?? "",
+      title: _appName,
       theme: ThemeData(
         accentColor: Colors.white10,
         backgroundColor: Colors.white,
@@ -72,9 +80,6 @@ class _MyAppState extends State<MyApp> {
           body1: TextStyle(color: Colors.white10, fontSize: 16.0),
         ),
       ),
-    );
-    return BotToastInit(
-      child: app,
     );
   }
 

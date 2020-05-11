@@ -1,9 +1,10 @@
 import 'package:bot_toast/bot_toast.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heytea_kit/animation/fade.dart';
 import 'package:heytea_kit/heytea_const.dart';
 import 'package:heytea_kit/heytea_kit.dart';
+import 'package:heytea_kit/utils/error_utils.dart';
 import 'package:heytea_kit/widget/toast/icon_text.dart';
 import 'package:heytea_kit/widget/toast/loading.dart';
 
@@ -57,6 +58,19 @@ class HeyTeaToast {
     );
   }
 
+  static CancelFunc showError(
+    dynamic error, {
+    crossPage = false,
+    clickClose = false,
+  }) {
+    final errMessage = ErrorUtils.messageFrom(error);
+    return showFailure(
+      errMessage,
+      crossPage: crossPage,
+      clickClose: clickClose,
+    );
+  }
+
   static CancelFunc showIconText(
     String text, {
     WidgetBuilder widgetBuilder,
@@ -79,9 +93,11 @@ class HeyTeaToast {
   }) {
     return BotToast.showAnimationWidget(
       toastBuilder: (_) => SafeArea(
-          child: Align(
-              alignment: Alignment.center,
-              child: widgetBuilder(HeyTeaKit.config?.buildContext))),
+        child: Align(
+          alignment: Alignment.center,
+          child: widgetBuilder(HeyTeaKit.config?.buildContext),
+        ),
+      ),
       animationDuration: HeyTeaConst.toastAnimationDuration,
       wrapToastAnimation:
           (AnimationController controller, CancelFunc _, Widget child) {

@@ -1,33 +1,21 @@
 import 'dart:async';
 
-//import 'package:tobias/tobias.dart' as tobias;
-class tobias {
-  static Future<String> aliPayVersion() async {
-    return "";
-  }
-  static Future<bool> isAliPayInstalled() async {
-    return false;
-  }
-  static Future<Map> alipay() async {
-    return Map();
-  }
-}
+import 'package:fake_alipay/fake_alipay.dart';
+import 'package:flutter/foundation.dart';
 
 class AlipayUtils {
-  static Future<bool> isAliPayInstalled = tobias.isAliPayInstalled();
-
-  static Future<String> alipayVersion = tobias.aliPayVersion();
-
-  static Future<Map> alipay(String order, {bool inSandBox = false}) {
-    return tobias.alipay();
-    //final evn = inSandBox ? tobias.AliPayEvn.SANDBOX : tobias.AliPayEvn.ONLINE;
-    //return tobias.aliPay(order, evn: evn);
+  static Future<bool> isAliPayInstalled(Alipay alipay) {
+    return alipay.isAlipayInstalled();
   }
 
-  static String resultStatus(Map result) {
-    if (result == null) {
-      return null;
-    }
-    return result["resultStatus"];
+  static Future<void> alipaySign(
+    Alipay alipay, {
+    @required String orderInfo,
+    bool isShowLoading = true,
+  }) {
+    return alipay.payOrderSign(
+      orderInfo: orderInfo,
+      isShowLoading: isShowLoading,
+    );
   }
 }

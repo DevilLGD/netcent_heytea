@@ -18,4 +18,9 @@ class HeyTeaColors {
 
   //用于内容区域底色及页面的灰色背景、分割线
   static const Color weakColor = Color(0xfff6f6f6);
+
+  // 深色背景板
+  static const Color darkBackdrop = Color(0xff333333);
+  // 浅色背景板
+  static const Color lightBackdrop = Color(0xfff6f6f6);
 }

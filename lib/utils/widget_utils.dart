@@ -1,28 +1,25 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:heytea_kit/const/ui_constants.dart';
 import 'package:heytea_kit/heytea_kit.dart';
-import 'package:heytea_kit/res/colors.dart';
 import 'package:heytea_kit/res/icons.dart';
 
 class HeyTeaStyle {
-  static const backLight = SizedBox(
-    width: kMinInteractiveDimension,
-    height: kMinInteractiveDimension,
-    child: Icon(
-      CupertinoIcons.back,
-      color: HeyTeaColors.primaryText,
-      size: 28,
-    ),
-  );
-  static const backDark = SizedBox(
-    width: kMinInteractiveDimension,
-    height: kMinInteractiveDimension,
-    child: Icon(
-      CupertinoIcons.back,
-      color: Colors.white,
-      size: 28,
-    ),
-  );
+
+  static Widget topBarIconButton({
+    @required IconData iconData,
+    @required Color color,
+    double size = 28,
+  }) {
+    return SizedBox(
+      width: UIConstants.minInteractiveDimension,
+      height: UIConstants.minInteractiveDimension,
+      child: Icon(
+        iconData,
+        color: color,
+        size: size,
+      ),
+    );
+  }
 
   static CupertinoButton cupertinoButton({
     Key key,
