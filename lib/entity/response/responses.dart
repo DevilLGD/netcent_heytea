@@ -21,8 +21,16 @@ class BaseResponse {
   /// A necessary factory constructor for creating a new BaseResponse instance
   /// from a map. Pass the map to the generated `_$BaseResponseFromJson()` constructor.
   /// The constructor is named after the source class, in this case, BaseResponse.
-  factory BaseResponse.fromJson(Map<String, dynamic> json) =>
-      _$BaseResponseFromJson(json);
+  factory BaseResponse.fromJson(Map<String, dynamic> json) {
+    if (json["error_code"] as String != null) {
+      json = {"code": json["error_code"] == "0" ? 200 : 500,
+        "desc": [json["error_msg"]],
+        "data": json["data"]
+      };
+    }
+    return _$BaseResponseFromJson(json);
+  }
+
 
   /// `toJson` is the convention for a class to declare support for serialization
   /// to JSON. The implementation simply calls the private, generated
