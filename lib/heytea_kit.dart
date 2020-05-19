@@ -17,9 +17,9 @@ class HeyTeaKit {
   /// 请在APP启动时配置 HeyTeaKit
   static HeyTeaKitConfig config;
 
-  static popRoute(BuildContext context) {
+  static popRoute<T extends Object>(BuildContext context, [T result]) {
     if (Navigator.canPop(context)) {
-      Navigator.pop(context);
+      Navigator.pop(context, result);
     } else {
       SystemNavigator.pop();
     }

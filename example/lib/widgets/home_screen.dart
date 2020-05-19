@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:heytea_kit/http/dior.dart';
 import 'package:heytea_kit/logger.dart';
 import 'package:heytea_kit/toast.dart';
+import 'package:heytea_kit/widget/safe_keyboard.dart';
 import 'package:heytea_kit/widget/video_player.dart';
 //import 'package:heytea_kit_example/api/laixin_client.dart';
 //import 'package:heytea_kit_example/entity/opening_ad_entity.dart';
@@ -67,6 +68,17 @@ class _HomeScreenState extends State<HomeScreen> {
             CupertinoButton(
               child: const Text("ShowFailure"),
               onPressed: () => HeyTeaToast.showFailure("加载失败"),
+            ),
+            CupertinoButton(
+              child: const Text("SafeKeyboard"),
+              onPressed: () {
+                showCupertinoModalPopup(
+                  context: context,
+                  builder: (context) => SafeKeyboardDialogChild(
+                    title: "请输入支付密码",
+                  ),
+                );
+              },
             ),
             CupertinoButton(
               child: const Text("Retrofit"),

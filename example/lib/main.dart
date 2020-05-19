@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
         const Locale.fromSubtags(languageCode: "zh", countryCode: "TW"),
         const Locale.fromSubtags(languageCode: "zh", countryCode: "HK"),
         const Locale.fromSubtags(languageCode: "zh", countryCode: "MO"),
-        const Locale.fromSubtags(languageCode: "en", countryCode: "US")
+        const Locale.fromSubtags(languageCode: "en", countryCode: "US"),
       ],
       title: _appName,
       theme: ThemeData(
