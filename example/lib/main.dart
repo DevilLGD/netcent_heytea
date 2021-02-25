@@ -14,7 +14,7 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   MyApp() {
-    MyAppRoutes.defineInRouter(Router.appRouter);
+    MyAppRoutes.defineInRouter(FluroRouter.appRouter);
   }
 
   @override
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
       ],
       navigatorObservers: [BotToastNavigatorObserver()],
       builder: BotToastInit(),
-      onGenerateRoute: Router.appRouter.generator,
+      onGenerateRoute: FluroRouter.appRouter.generator,
       supportedLocales: [
         const Locale.fromSubtags(languageCode: "zh", countryCode: "CN"),
         const Locale.fromSubtags(languageCode: "zh", countryCode: "TW"),

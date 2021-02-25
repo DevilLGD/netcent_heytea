@@ -12,7 +12,7 @@ class MyAppRoutes {
   static const String home = "/home";
   static const String gallery = "/gallery";
 
-  static defineInRouter(Router router) {
+  static defineInRouter(FluroRouter router) {
     router.define(
       splash,
       handler: HeyTeaRouter.handlerOf(
