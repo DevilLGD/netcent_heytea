@@ -14,8 +14,8 @@ dependencies:
   bugly_crash:
     git:
       # 我们自己fork了一个分支，导出了Bugly的Jar文件
-      # https://github.com/mingchaogui/Bugly-Flutter-Plugin
-      url: https://github.com/mingchaogui/Bugly-Flutter-Plugin.git
+      # https://github.com/DevilLGD/Bugly-Flutter-Plugin
+      url: https://github.com/DevilLGD/Bugly-Flutter-Plugin.git
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -34,8 +34,8 @@ dependencies:
   # https://pub.dev/packages/fluwx
   fluwx:
     # 我们自己fork了一个分支，降低了OKHttp版本，以兼容旧有项目
-    # https://github.com/mingchaogui/fluwx
-    git: https://github.com/mingchaogui/fluwx.git
+    # https://github.com/DevilLGD/fluwx
+    git: https://github.com/DevilLGD/fluwx.git
   # https://pub.dev/packages/json_annotation
   json_annotation: ^3.0.1
   # https://pub.dev/packages/logger
