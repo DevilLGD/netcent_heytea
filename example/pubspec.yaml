@@ -43,7 +43,7 @@ dependencies:
   # https://pub.dev/packages/bot_toast
   bot_toast: ^3.0.0
   # https://pub.dev/packages/extended_image
-  extended_image: ^0.7.3+1
+  extended_image: ^2.0.0
   # https://pub.dev/packages/flutter_spinkit
   flutter_spinkit: ^4.1.2+1
   # https://pub.dev/packages/flutter_svg
@@ -61,7 +61,7 @@ dev_dependencies:
   # https://pub.dev/packages/build_runner
   build_runner: ^1.10.0
   # https://pub.dev/packages/intl_translation
-  intl_translation: ^0.17.9
+  #intl_translation: ^0.17.10+1
   # https://pub.dev/packages/json_serializable
   json_serializable: ^3.3.0
   # https://pub.dev/packages/retrofit_generator

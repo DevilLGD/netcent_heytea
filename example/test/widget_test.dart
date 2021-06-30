@@ -35,17 +35,17 @@ void main() {
     final loggerB = HeyTeaLogger();
     expect(loggerA == loggerB, true);
 
-    final clientA = GemiClient.shared as GemiClient;
-    final clientB = GemiClient(Dior.appDio);
-    expect(clientA == clientB, true);
+    // final clientA = GemiClient.shared as GemiClient;
+    // final clientB = GemiClient(Dior.appDio);
+    // expect(clientA == clientB, true);
   });
 
   test('dio test', () async {
-    LaixinClient.shared()
-        .openingAd(5)
-        .then(Dior.verifyResponse)
-        .then((response) => OpeningAdEntity.fromJson(response.data))
-        .then((data) => HeyTeaLogger().d(data.adGroupName))
-        .catchError(Dior.handleError);
+    // LaixinClient.shared()
+    //     .openingAd(5)
+    //     .then(Dior.verifyResponse)
+    //     .then((response) => OpeningAdEntity.fromJson(response.data))
+    //     .then((data) => HeyTeaLogger().d(data.adGroupName))
+    //     .catchError(Dior.handleError);
   });
 }
