@@ -102,7 +102,7 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          _controller.value.initialized
+          _controller.value.isInitialized
               ? AspectRatio(
                   aspectRatio: _controller.value.aspectRatio,
                   child: VideoPlayer(_controller),
@@ -110,7 +110,7 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
               : const SizedBox.shrink(),
           _gestureDetector,
           Visibility(
-            visible: _controller.value.initialized &&
+            visible: _controller.value.isInitialized &&
                 _controller.value.isPlaying == false,
             child: _playButton,
           ),
@@ -118,7 +118,7 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
             visible: _isOverlayUIShow,
             child: _overlayUI,
           ),
-          _controller.value.initialized || _controller.value.hasError
+          _controller.value.isInitialized || _controller.value.hasError
               ? const SizedBox.shrink()
               : CircularProgressIndicator(
                   valueColor:
@@ -252,7 +252,7 @@ class _HeyTeaVideoPlayerOverlayState extends State<_HeyTeaVideoPlayerOverlay> {
   }
 
   _onSliderValueUpdated(double value) {
-    if (_controller.value.initialized == false) {
+    if (_controller.value.isInitialized == false) {
       return;
     }
 
