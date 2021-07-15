@@ -66,8 +66,12 @@ dependencies:
   flutter_swiper: #^1.1.6
   # https://pub.dev/packages/flutter_widgets
   flutter_widgets: #^0.1.12
+
   # https://pub.dev/packages/video_player
-  video_player: #^0.10.11
+  #video_player: #^0.10.11
+  # 重名更改
+  # https://pub.dev/packages/better_player
+  better_player:
 
 dev_dependencies:
   flutter_test:

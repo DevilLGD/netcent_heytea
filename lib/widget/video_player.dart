@@ -4,7 +4,11 @@ import 'package:flutter/widgets.dart';
 import 'package:heytea_kit/heytea_kit.dart';
 import 'package:heytea_kit/utils/duration_utils.dart';
 import 'package:heytea_kit/utils/video_player_utils.dart';
-import 'package:video_player/video_player.dart';
+import 'package:better_player/better_player.dart';
+import 'package:better_player/src/video_player/video_player.dart';
+
+
+
 
 class HeyTeaVideoPlayerRoute extends CupertinoPageRoute {
   HeyTeaVideoPlayerRoute({@required WidgetBuilder builder})
@@ -38,11 +42,11 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
 
     WidgetsBinding.instance.addObserver(this);
     _controller.addListener(() => setState(() {}));
-    _controller.initialize().then((_) {
+    //_controller.initialize().then((_) {
       // Ensure the first frame is shown after the video is initialized,
       // even before the play button has been pressed.
       _controller.play();
-    });
+    //});
 
     _gestureDetector = SizedBox.expand(
       child: GestureDetector(
@@ -102,7 +106,7 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          _controller.value.isInitialized
+          _controller.value.initialized
               ? AspectRatio(
                   aspectRatio: _controller.value.aspectRatio,
                   child: VideoPlayer(_controller),
@@ -110,7 +114,7 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
               : const SizedBox.shrink(),
           _gestureDetector,
           Visibility(
-            visible: _controller.value.isInitialized &&
+            visible: _controller.value.initialized &&
                 _controller.value.isPlaying == false,
             child: _playButton,
           ),
@@ -118,7 +122,7 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
             visible: _isOverlayUIShow,
             child: _overlayUI,
           ),
-          _controller.value.isInitialized || _controller.value.hasError
+          _controller.value.initialized || _controller.value.hasError
               ? const SizedBox.shrink()
               : CircularProgressIndicator(
                   valueColor:
@@ -252,7 +256,7 @@ class _HeyTeaVideoPlayerOverlayState extends State<_HeyTeaVideoPlayerOverlay> {
   }
 
   _onSliderValueUpdated(double value) {
-    if (_controller.value.isInitialized == false) {
+    if (_controller.value.initialized == false) {
       return;
     }
 

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-export 'package:video_player/video_player.dart';
+export 'package:better_player/better_player.dart';
 
 class HeyTeaKit {
   static const String packageName = 'heytea_kit';
