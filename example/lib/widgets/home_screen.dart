@@ -8,7 +8,7 @@ import 'package:heytea_kit/widget/video_player.dart';
 //import 'package:heytea_kit_example/api/laixin_client.dart';
 //import 'package:heytea_kit_example/entity/opening_ad_entity.dart';
 import 'package:heytea_kit_example/routes.dart';
-import 'package:better_player/src/video_player/video_player.dart';
+import 'package:video_player/video_player.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -40,10 +40,9 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () => Navigator.of(context).push(
                 HeyTeaVideoPlayerRoute(
                     builder: (context) => HeyTeaVideoPlayer(
-                        VideoPlayerController()
-                      //VideoPlayerController.network("https://v-cdn.zjol.com.cn/280443.mp4")
-                    )
-                ),
+                          VideoPlayerController.network(
+                              "https://v-cdn.zjol.com.cn/280443.mp4"),
+                        )),
               ),
             ),
             CupertinoButton(
