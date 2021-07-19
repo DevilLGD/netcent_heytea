@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:heytea_kit/widget/image_viewer.dart';
+import 'package:heytea_kit/widget/extended_image_slide_page_route.dart';
 
 class GalleryScreen extends StatelessWidget {
   final List<String> _imageList;

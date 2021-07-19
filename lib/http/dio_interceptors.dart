@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:heytea_kit/heytea_kit.dart';
 
 /// 在此处改造请求，统一加入Token
-class TokenInterceptor extends Interceptor {
+class TokenInterceptor extends Interceptor { //
   @override
-  Future onRequest(RequestOptions options) async {
+  Future onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     final baseUrls = await HeyTeaKit.config?.apiBaseUrlsGetter();
     final isBaseUrl = baseUrls?.contains(options.baseUrl) == true;
     if (isBaseUrl) {
@@ -19,6 +19,6 @@ class TokenInterceptor extends Interceptor {
       }
     }
 
-    return super.onRequest(options);
+    return super.onRequest(options, handler);
   }
 }

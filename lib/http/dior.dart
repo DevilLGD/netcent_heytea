@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:dio_flutter_transformer/dio_flutter_transformer.dart';
+//import 'package:dio_flutter_transformer/dio_flutter_transformer.dart';
 import 'package:flutter/foundation.dart';
 import 'package:heytea_kit/entity/response/responses.dart';
 import 'package:heytea_kit/exception/api_exception.dart';
@@ -20,7 +20,7 @@ class Dior {
     Duration receiveTimeout = const Duration(seconds: 30),
     String baseUrl,
     ResponseType responseType = ResponseType.json,
-    String contentType = Headers.jsonContentType,
+    //String contentType = Headers.jsonContentType,
     bool receiveDataWhenStatusError = false
   }) {
     String platformType;
@@ -35,7 +35,7 @@ class Dior {
       receiveTimeout: receiveTimeout?.inMilliseconds,
       baseUrl: baseUrl,
       responseType: responseType,
-      contentType: contentType,
+      //contentType: contentType,
       receiveDataWhenStatusError: receiveDataWhenStatusError,
     );
 
@@ -44,7 +44,7 @@ class Dior {
     // 开启请求日志
     dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     // A dio transformer especially for flutter, by which the json decoding will be in background with [compute] function.
-    dio.transformer = FlutterTransformer();
+    //dio.transformer = FlutterTransformer();
     dio.options.headers["version"] = HeyTeaKit.config?.appVersionCodeGetter();
     dio.options.headers["platformType"] = platformType;
 
