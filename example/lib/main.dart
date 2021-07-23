@@ -22,7 +22,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _appName;
+  String _appName = "";
 
   _MyAppState({String appName = ""}) {
     _appName = appName;
@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
         const Locale.fromSubtags(languageCode: "zh", countryCode: "MO"),
         const Locale.fromSubtags(languageCode: "en", countryCode: "US"),
       ],
-      title: _appName ?? '',
+      title: _appName,
       theme: ThemeData(
         accentColor: Colors.white10,
         backgroundColor: Colors.white,

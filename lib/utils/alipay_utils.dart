@@ -8,7 +8,10 @@ class Alipay {
 }
 
 class AlipayResp {
-  AlipayResp();
+  AlipayResp({
+    this.resultStatus = 0,
+    this.memo = "",
+  });
 
   int resultStatus;
 
@@ -21,10 +24,10 @@ class AlipayUtils {
   }
 
   static Future<void> alipaySign(
-      Alipay alipay, {
-        @required String orderInfo,
-        bool isShowLoading = true,
-      }) async {
+    Alipay alipay, {
+    required String orderInfo,
+    bool isShowLoading = true,
+  }) async {
     return;
   }
 }

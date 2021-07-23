@@ -5,7 +5,6 @@ import 'package:bugly_crash/bugly.dart';
 import 'package:flutter/foundation.dart';
 import 'package:heytea_kit/heytea_kit.dart';
 
-
 /// Dart线程模型及异常捕获
 /// - https://book.flutterchina.club/chapter2/thread_model_and_error_report.html
 ///
@@ -13,8 +12,8 @@ import 'package:heytea_kit/heytea_kit.dart';
 /// - https://api.dart.dev/stable/dart-async/Zone-class.html
 /// - https://www.dartlang.org/articles/libraries/zones
 class HeyTeaBugReporter {
-
-  static final Function onPostError = (Object error, StackTrace stackTrace) async {
+  static final Function onPostError =
+      (Object error, StackTrace stackTrace) async {
     await postException(
       type: HeyTeaKit.packageName,
       error: error.toString(),
@@ -30,18 +29,18 @@ class HeyTeaBugReporter {
     /// 如果我们想自己上报异常，只需要提供一个自定义的错误处理回调即可
     FlutterError.onError = (details) {
       FlutterError.dumpErrorToConsole(details);
-      Zone.current.handleUncaughtError(details.exception, details.stack);
+      Zone.current.handleUncaughtError(details.exception, details.stack!);
     };
   }
 
   static init({
-    @required String appId,
-    @required bool isDebug,
-    String appChannel,
-    String appPackage,
-    String appVersion,
-    bool isDevelopmentDevice,
-    int userSceneTag,
+    @required String appId = "",
+    @required bool isDebug = false,
+    String appChannel = "",
+    String appPackage = "",
+    String appVersion = "",
+    bool isDevelopmentDevice = false,
+    int userSceneTag = 0,
   }) {
     if (Platform.isAndroid) {
       Bugly.initAndroidCrashReport(
@@ -70,10 +69,10 @@ class HeyTeaBugReporter {
   /// @param stackTrace 出错堆栈
   /// @param extraInfo 额外信息
   static Future<void> postException({
-    String type,
-    String error,
-    String stackTrace,
-    Map<String, String> extraInfo,
+    String type = "",
+    String error = "",
+    String stackTrace = "",
+    Map<String, String> extraInfo = const {},
   }) {
     return Bugly.postException(
       type: type,

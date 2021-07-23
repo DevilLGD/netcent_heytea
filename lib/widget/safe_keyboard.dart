@@ -9,10 +9,10 @@ import 'package:heytea_kit/utils/widget_utils.dart';
 class SafeKeyboardDialogChild extends StatefulWidget {
   final String title;
   final int passwordLength;
-  final VoidCallback onCloseTap;
+  final VoidCallback? onCloseTap;
 
   SafeKeyboardDialogChild({
-    this.title,
+    this.title = "",
     this.passwordLength = 6,
     this.onCloseTap,
   });
@@ -24,7 +24,7 @@ class SafeKeyboardDialogChild extends StatefulWidget {
 }
 
 class SafeKeyboardDialogChildState extends State<SafeKeyboardDialogChild> {
-  final ValueNotifier<List<String>> inputsNotifier = ValueNotifier(null);
+  final ValueNotifier<List<String>> inputsNotifier = ValueNotifier([]);
 
   @override
   void initState() {
@@ -73,10 +73,10 @@ class SafeKeyboard extends StatelessWidget {
   final ValueNotifier<List<String>> inputsNotifier;
 
   SafeKeyboard({
-    this.title,
+    this.title = "",
     this.passwordLength = 6,
-    this.onCloseTap,
-    @required this.inputsNotifier,
+    required this.onCloseTap,
+    required this.inputsNotifier,
   }) {
     inputsNotifier.value = _inputs;
   }

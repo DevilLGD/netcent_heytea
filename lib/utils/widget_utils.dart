@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:heytea_kit/const/ui_constants.dart';
 import 'package:heytea_kit/heytea_kit.dart';
 import 'package:heytea_kit/res/icons.dart';
@@ -6,8 +7,8 @@ import 'package:heytea_kit/res/icons.dart';
 class HeyTeaStyle {
 
   static Widget topBarIconButton({
-    @required IconData iconData,
-    @required Color color,
+    required IconData iconData,
+    required Color color,
     double size = 28,
   }) {
     return SizedBox(
@@ -22,15 +23,15 @@ class HeyTeaStyle {
   }
 
   static CupertinoButton cupertinoButton({
-    Key key,
-    @required Widget child,
+    Key? key,
+    required Widget child,
     EdgeInsetsGeometry padding = EdgeInsets.zero,
-    Color color,
+    Color color = Colors.black,
     Color disabledColor = CupertinoColors.quaternarySystemFill,
     double minSize = 0,
     double pressedOpacity = 0.4,
     BorderRadius borderRadius = const BorderRadius.all(Radius.circular(0)),
-    @required VoidCallback onPressed,
+    required VoidCallback onPressed,
   }) {
     return CupertinoButton(
       key: key,

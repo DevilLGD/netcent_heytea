@@ -18,7 +18,7 @@ class Dior {
   static Dio newDioInstance({
     Duration connectTimeout = const Duration(seconds: 30),
     Duration receiveTimeout = const Duration(seconds: 30),
-    String baseUrl,
+    String baseUrl = "",
     ResponseType responseType = ResponseType.json,
     //String contentType = Headers.jsonContentType,
     bool receiveDataWhenStatusError = false
@@ -31,8 +31,8 @@ class Dior {
     }
 
     final options = BaseOptions(
-      connectTimeout: connectTimeout?.inMilliseconds,
-      receiveTimeout: receiveTimeout?.inMilliseconds,
+      connectTimeout: connectTimeout.inMilliseconds,
+      receiveTimeout: receiveTimeout.inMilliseconds,
       baseUrl: baseUrl,
       responseType: responseType,
       //contentType: contentType,
@@ -82,7 +82,8 @@ class Dior {
   static List<R> transformDataAsList<R>(BaseResponse response,
       FutureOr<R> onValue(Map<String, dynamic> json)) {
     final dataList = response.data as List;
-    final modelList = List<R>(dataList.length);
+    //final modelList = List<R>(dataList.length);
+    var modelList = []; //List.filled(dataList.length, 0);
 
     for (int i = 0; i < dataList.length; i++) {
       final data = dataList[i];
@@ -90,14 +91,15 @@ class Dior {
       modelList[i] = model;
     }
 
-    return modelList;
+    return modelList as List<R>;
   }
 
   /// 转换返回数据为一个本地模型
   static List<R> transformDataList<R>(List data,
       FutureOr<R> onValue(Map<String, dynamic> json)) {
     final dataList = data as List;
-    final modelList = List<R>(dataList.length);
+    //final modelList = List<R>(dataList.length);
+    var modelList = [];
 
     for (int i = 0; i < dataList.length; i++) {
       final data = dataList[i];
@@ -105,6 +107,6 @@ class Dior {
       modelList[i] = model;
     }
 
-    return modelList;
+    return modelList as List<R>;
   }
 }

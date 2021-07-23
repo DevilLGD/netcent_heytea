@@ -73,7 +73,7 @@ class HeyTeaToast {
 
   static CancelFunc showIconText(
     String text, {
-    WidgetBuilder widgetBuilder,
+    required WidgetBuilder widgetBuilder,
     crossPage = false,
     clickClose = false,
     duration = HeyTeaConst.toastDuration,
@@ -95,7 +95,7 @@ class HeyTeaToast {
       toastBuilder: (_) => SafeArea(
         child: Align(
           alignment: Alignment.center,
-          child: widgetBuilder(HeyTeaKit.config?.buildContext),
+          child: widgetBuilder(HeyTeaKit.config!.buildContext),
         ),
       ),
       animationDuration: HeyTeaConst.toastAnimationDuration,

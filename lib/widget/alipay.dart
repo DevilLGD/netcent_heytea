@@ -8,11 +8,11 @@ typedef AlipayListener = void Function(AlipayResp response);
 class AlipayBuilder extends StatefulWidget {
   final Alipay alipay;
   final WidgetBuilder builder;
-  final AlipayListener listener;
+  final AlipayListener? listener;
 
   const AlipayBuilder({
-    @required this.alipay,
-    @required this.builder,
+    required this.alipay,
+    required this.builder,
     this.listener,
   });
 
@@ -23,7 +23,7 @@ class AlipayBuilder extends StatefulWidget {
 }
 
 class _AlipayBuilderState extends State<AlipayBuilder> {
-  StreamSubscription<AlipayResp> _paySubscription;
+  StreamSubscription<AlipayResp>? _paySubscription;
 
   @override
   void initState() {

@@ -19,6 +19,6 @@ class ErrorUtils {
         message = error.toString();
     }
 
-    return message ?? "";
+    return message;
   }
 }

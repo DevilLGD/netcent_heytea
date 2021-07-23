@@ -14,7 +14,7 @@ class BaseResponse {
   final List<String> desc;
   final data;
 
-  const BaseResponse({this.code, this.desc, this.data});
+  const BaseResponse({this.code = 0, this.desc = const[], this.data});
 
   bool isSuccess() => code == 200;
 

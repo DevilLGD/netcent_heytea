@@ -15,9 +15,9 @@ class HeyTeaKit {
   }
 
   /// 请在APP启动时配置 HeyTeaKit
-  static HeyTeaKitConfig config;
+  static HeyTeaKitConfig? config;
 
-  static popRoute<T extends Object>(BuildContext context, [T result]) {
+  static popRoute<T extends Object>(BuildContext context, [T? result]) {
     if (Navigator.canPop(context)) {
       Navigator.pop(context, result);
     } else {
@@ -43,11 +43,11 @@ class HeyTeaKitConfig {
   const HeyTeaKitConfig(
     this.buildContext, {
     // 获取登录状态
-    this.hasSignIn,
+    required this.hasSignIn,
     // 返回登录页
-    this.navigateToSignIn,
-    this.appVersionCodeGetter,
-    this.apiBaseUrlsGetter,
-    this.apiTokenGenerator,
+    required this.navigateToSignIn,
+    required this.appVersionCodeGetter,
+    required this.apiBaseUrlsGetter,
+    required this.apiTokenGenerator,
   });
 }

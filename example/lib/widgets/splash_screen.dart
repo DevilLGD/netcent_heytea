@@ -12,7 +12,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  bool _alreadySignIn;
+  bool _alreadySignIn = false;
 
   @override
   void initState() {
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     switch (_alreadySignIn) {
       case false:
         // TODO 返回登录页
-        return HeyTeaKit.config?.navigateToSignIn(context);
+        return HeyTeaKit.config!.navigateToSignIn(context);
       case true:
         return HomeScreen();
       default:

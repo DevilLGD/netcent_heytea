@@ -7,7 +7,7 @@ import 'package:heytea_kit/utils/video_player_utils.dart';
 import 'package:video_player/video_player.dart';
 
 class HeyTeaVideoPlayerRoute extends CupertinoPageRoute {
-  HeyTeaVideoPlayerRoute({@required WidgetBuilder builder})
+  HeyTeaVideoPlayerRoute({required WidgetBuilder builder})
       : super(builder: builder);
 }
 
@@ -26,9 +26,9 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
     with WidgetsBindingObserver {
   VideoPlayerController get _controller => widget._controller;
 
-  Widget _gestureDetector;
-  Widget _playButton;
-  Widget _overlayUI;
+  Widget? _gestureDetector;
+  Widget? _playButton;
+  Widget? _overlayUI;
 
   bool _isOverlayUIShow = false;
 
@@ -36,7 +36,7 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance?.addObserver(this);
     _controller.addListener(() => setState(() {}));
     _controller.initialize().then((_) {
       // Ensure the first frame is shown after the video is initialized,
@@ -76,7 +76,7 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
   void dispose() {
     super.dispose();
 
-    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance?.removeObserver(this);
     _controller.dispose();
   }
 
@@ -108,15 +108,15 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
                   child: VideoPlayer(_controller),
                 )
               : const SizedBox.shrink(),
-          _gestureDetector,
+          _gestureDetector!,
           Visibility(
             visible: _controller.value.isInitialized &&
                 _controller.value.isPlaying == false,
-            child: _playButton,
+            child: _playButton!,
           ),
           Visibility(
             visible: _isOverlayUIShow,
-            child: _overlayUI,
+            child: _overlayUI!,
           ),
           _controller.value.isInitialized || _controller.value.hasError
               ? const SizedBox.shrink()
@@ -129,7 +129,7 @@ class _HeyTeaVideoPlayerState extends State<HeyTeaVideoPlayer>
               ? Padding(
                   padding: const EdgeInsets.all(30),
                   child: Text(
-                    _controller.value.errorDescription,
+                    _controller.value.errorDescription!,
                     style: TextStyle(
                       color: Colors.white.withOpacity(0.6),
                     ),

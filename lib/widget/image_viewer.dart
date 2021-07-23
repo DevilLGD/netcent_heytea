@@ -7,7 +7,7 @@ typedef HeroTagGenerator = Object Function(int index);
 class ImageViewer {
   static network(
     List<ImageProvider> imageProviders, {
-    HeroTagGenerator heroTagGenerator,
+    required HeroTagGenerator heroTagGenerator,
     int initialIndex = 0,
   }) {
     return ExtendedImageSlidePage(
@@ -27,11 +27,11 @@ class ImageViewerPageView extends StatelessWidget {
   final HeroTagGenerator heroTagGenerator;
   final int initialIndex;
 
-  int _currentIndex;
+  int _currentIndex = 0;
 
   ImageViewerPageView(
     this._imageProviders, {
-    this.heroTagGenerator,
+    required this.heroTagGenerator,
     this.initialIndex = 0,
   }) {
     _currentIndex = initialIndex;
@@ -67,7 +67,7 @@ class ImageViewerPageView extends StatelessWidget {
           );
           if (index == _currentIndex) {
             return Hero(
-              tag: heroTagGenerator != null ? heroTagGenerator(index) : null,
+              tag: heroTagGenerator(index),
               child: image,
             );
           } else {

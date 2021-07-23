@@ -11,13 +11,13 @@ int booToInt(bool value) {
 }
 
 T findWithString<T>(Iterable<T> values, String match) {
-  return values?.firstWhere(
+  return values.firstWhere(
     (value) => value.toString() == match,
-    orElse: () => null,
+    //orElse: () => null,
   );
 }
 
-T firstOrNull<T>(Iterable<T> iterable) {
+T? firstOrNull<T>(Iterable<T> iterable) {
   if (iterable != null && iterable.isNotEmpty) {
     return iterable.first;
   } else {
@@ -25,7 +25,7 @@ T firstOrNull<T>(Iterable<T> iterable) {
   }
 }
 
-T getOrNull<T>(Iterable<T> iterable, int index) {
+T? getOrNull<T>(Iterable<T> iterable, int index) {
   if (isEmptyIterable(iterable) == false &&
       index != null &&
       index < iterable.length) {

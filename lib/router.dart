@@ -15,15 +15,15 @@ class HeyTeaRouter {
   }) {
     return Handler(
       handlerFunc: (
-        BuildContext context,
-        Map<String, dynamic> params,
+        BuildContext? context,
+        Map<String, List<String>> params,
       ) {
         final hasSignIn = HeyTeaKit.config?.hasSignIn() == true;
         if (requireSignIn && !hasSignIn) {
           // 去登录
-          return HeyTeaKit.config?.navigateToSignIn(context);
+          return HeyTeaKit.config?.navigateToSignIn(context!);
         } else {
-          return onScreen(context, params);
+          return onScreen(context!, params);
         }
       },
     );

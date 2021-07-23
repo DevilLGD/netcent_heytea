@@ -5,7 +5,7 @@ class HeyTeaAPIException implements Exception {
   final int code;
   final String message;
 
-  const HeyTeaAPIException(this.code, {this.message});
+  const HeyTeaAPIException(this.code, {this.message = ""});
 
   HeyTeaAPIException.fromDioError(DioError dioError) : this(
       dioError.error,

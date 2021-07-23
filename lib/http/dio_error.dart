@@ -11,7 +11,7 @@ extension HeyTeaDioError on DioError {
       case DioErrorType.receiveTimeout:
         return "响应超时";
       case DioErrorType.response:
-        switch (response.statusCode) {
+        switch (response?.statusCode) {
           case 400:
             return "400 Bad Request";
           case 401:

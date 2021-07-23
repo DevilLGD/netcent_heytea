@@ -5,7 +5,7 @@ import 'package:heytea_kit/utils/url_params.dart';
 mixin PageParams {
   Map<String, dynamic> get values;
 
-  static T getValue<T>(Map<String, dynamic> parameters, String key) {
+  static T? getValue<T>(Map<String, dynamic> parameters, String key) {
     if (parameters != null) {
       final values = parameters[key];
       if (values is Iterable) {
@@ -19,9 +19,9 @@ mixin PageParams {
     return null;
   }
 
-  static String encodeValue(
+  static String? encodeValue(
     Object value, {
-    Object toEncodable(Object nonEncodable),
+    Object? toEncodable(Object? nonEncodable)?,
   }) {
     if (value == null) {
       return null;
@@ -39,7 +39,7 @@ mixin PageParams {
 
   static dynamic decodeValue(
     String source, {
-    Object reviver(Object key, Object value),
+    Object? reviver(Object? key, Object? value)?,
   }) {
     if (source == null) {
       return null;

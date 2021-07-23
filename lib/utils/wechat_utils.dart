@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:fluwx/fluwx.dart' as fluwx;
 
-export 'package:fluwx/fluwx.dart';
+//export 'package:fluwx/fluwx.dart';
 
 class WechatUtils {
   static Future<bool> isWeChatInstalled() {
@@ -15,15 +15,15 @@ class WechatUtils {
   /// 为了获取真实的回调，你应该这样做：
   /// [listenToWeChatResponseEvent];
   static Future<bool> wxpay({
-    @required String appId,
-    @required String partnerId,
-    @required String prepayId,
-    @required String packageValue,
-    @required String nonceStr,
-    @required int timeStamp,
-    @required String sign,
-    String signType,
-    String extData,
+    required String appId,
+    required String partnerId,
+    required String prepayId,
+    required String packageValue,
+    required String nonceStr,
+    required int timeStamp,
+    required String sign,
+    String signType = "",
+    String extData = "",
   }) {
     return fluwx.payWithWeChat(
       appId: appId,

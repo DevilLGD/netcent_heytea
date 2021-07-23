@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             CupertinoButton(
               child: const Text("ShowLoading"),
-              onPressed: () => HeyTeaToast.showLoading(null),
+              onPressed: () => HeyTeaToast.showLoading(""),
             ),
             CupertinoButton(
               child: const Text("ShowLoadingText"),

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:fluwx/fluwx.dart' as fluwx;
 
-export 'package:fluwx/fluwx.dart';
+//export 'package:fluwx/fluwx.dart';
 
 typedef WechatListener = void Function(fluwx.BaseWeChatResponse response);
 
@@ -13,16 +13,16 @@ class WechatBuilder extends StatefulWidget {
   final bool doOnAndroid;
   final String universalLink;
 
-  final WechatListener listener;
-  final Function onError;
+  final WechatListener? listener;
+  final Function? onError;
 
-  final WidgetBuilder builder;
+  final WidgetBuilder? builder;
 
   const WechatBuilder({
-    @required this.appId,
+    @required this.appId = "",
     this.doOnIOS = true,
     this.doOnAndroid = true,
-    this.universalLink,
+    this.universalLink = "",
     this.listener,
     this.onError,
     @required this.builder,
@@ -35,7 +35,7 @@ class WechatBuilder extends StatefulWidget {
 }
 
 class _WechatBuilderState extends State<WechatBuilder> {
-  StreamSubscription<fluwx.BaseWeChatResponse> _subscription;
+  StreamSubscription<fluwx.BaseWeChatResponse>? _subscription;
 
   @override
   void initState() {
@@ -61,6 +61,6 @@ class _WechatBuilderState extends State<WechatBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.builder(context);
+    return widget.builder!(context);
   }
 }

@@ -6,7 +6,7 @@ class IconTextWidget extends StatelessWidget {
   final WidgetBuilder _widgetBuilder;
   final String _text;
 
-  const IconTextWidget(this._widgetBuilder, this._text, {Key key})
+  const IconTextWidget(this._widgetBuilder, this._text, {Key? key})
       : super(key: key);
 
   @override

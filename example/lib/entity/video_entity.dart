@@ -16,9 +16,9 @@ class VideoEntity {
   final String videoDownloadUrl;
 
   const VideoEntity({
-    this.cover,
-    this.id,
-    this.videoDownloadUrl,
+    this.cover = "",
+    this.id = 0,
+    this.videoDownloadUrl = "",
   });
 
   /// A necessary factory constructor for creating a new VideoEntity instance

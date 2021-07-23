@@ -5,7 +5,7 @@ import 'package:heytea_kit/heytea_const.dart';
 class LoadingWidget extends StatelessWidget {
   final String _text;
 
-  const LoadingWidget(this._text, {Key key}) : super(key: key);
+  const LoadingWidget(this._text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
