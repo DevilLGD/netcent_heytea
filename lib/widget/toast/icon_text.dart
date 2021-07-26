@@ -3,7 +3,7 @@ import 'package:heytea_kit/heytea_const.dart';
 
 /// 图标+文字的Widget
 class IconTextWidget extends StatelessWidget {
-  final WidgetBuilder _widgetBuilder;
+  final WidgetBuilder? _widgetBuilder;
   final String _text;
 
   const IconTextWidget(this._widgetBuilder, this._text, {Key? key})
@@ -20,7 +20,7 @@ class IconTextWidget extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          if (_widgetBuilder != null) _widgetBuilder(context),
+          if (_widgetBuilder != null) _widgetBuilder!(context),
           if (_text != null)
             Text(
               _text,

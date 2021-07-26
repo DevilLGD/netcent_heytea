@@ -73,7 +73,7 @@ class HeyTeaToast {
 
   static CancelFunc showIconText(
     String text, {
-    required WidgetBuilder widgetBuilder,
+    WidgetBuilder? widgetBuilder,
     crossPage = false,
     clickClose = false,
     duration = HeyTeaConst.toastDuration,
