@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/widgets.dart';
-import 'package:fluwx/fluwx.dart' as fluwx;
-
+//import 'package:fluwx/fluwx.dart' as fluwx;
+import 'package:heytea_kit/utils/test_fluwx.dart' as fluwx;
 //export 'package:fluwx/fluwx.dart';
 
 typedef WechatListener = void Function(fluwx.BaseWeChatResponse response);
@@ -48,7 +48,7 @@ class _WechatBuilderState extends State<WechatBuilder> {
       universalLink: widget.universalLink,
     );
     if (widget.listener != null) {
-      _subscription = fluwx.weChatResponseEventHandler.listen(widget.listener);
+      //_subscription = fluwx.weChatResponseEventHandler.listen(widget.listener);
     }
   }
 

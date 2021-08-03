@@ -34,7 +34,7 @@ dependencies:
   # https://github.com/theyakka/fluro
   fluro: ^2.0.3 #^1.6.3
   # https://pub.dev/packages/fluwx
-  fluwx:
+  #fluwx:
     # 我们自己fork了一个分支，降低了OKHttp版本，以兼容旧有项目
     # https://github.com/DevilLGD/fluwx
     #git: https://github.com/DevilLGD/fluwx.git
