@@ -57,7 +57,7 @@ mixin PageParams {
 
   @override
   String toString() {
-    if (values?.isEmpty ?? true) {
+    if (values.isEmpty) {
       return '';
     }
 

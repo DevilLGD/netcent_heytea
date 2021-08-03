@@ -58,7 +58,7 @@ bool isBlankIterable(Iterable iterable) {
 bool equalsIterable(Iterable a, Iterable b) {
   if (a == b) {
     return true;
-  } else if (a?.length != b?.length) {
+  } else if (a.length != b.length) {
     return false;
   }
 

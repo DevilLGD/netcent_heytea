@@ -19,13 +19,13 @@ class WechatBuilder extends StatefulWidget {
   final WidgetBuilder? builder;
 
   const WechatBuilder({
-    @required this.appId = "",
+    this.appId = "",
     this.doOnIOS = true,
     this.doOnAndroid = true,
     this.universalLink = "",
     this.listener,
     this.onError,
-    @required this.builder,
+    this.builder,
   });
 
   @override
