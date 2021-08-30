@@ -25,13 +25,13 @@ class HeyTeaStyle {
   static CupertinoButton cupertinoButton({
     Key? key,
     required Widget child,
-    EdgeInsetsGeometry padding: EdgeInsets.zero,
-    Color? color,
-    Color disabledColor:CupertinoColors.quaternarySystemFill,
-    double? minSize,
+    EdgeInsetsGeometry padding = EdgeInsets.zero,
+    Color color = Colors.black,
+    Color disabledColor = CupertinoColors.quaternarySystemFill,
+    double minSize = 0,
     double pressedOpacity = 0.4,
-    BorderRadius? borderRadius,
-    VoidCallback? onPressed,
+    BorderRadius borderRadius = const BorderRadius.all(Radius.circular(0)),
+    required VoidCallback onPressed,
   }) {
     return CupertinoButton(
       key: key,

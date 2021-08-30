@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:heytea_kit/utils/test_fluwx.dart' as fluwx;
-//import 'package:fluwx/fluwx.dart' as fluwx;
+import 'package:fluwx/fluwx.dart' as fluwx;
 
 //export 'package:fluwx/fluwx.dart';
 
