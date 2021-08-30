@@ -80,33 +80,33 @@ class Dior {
 
   /// 转换返回数据为一个本地模型
   static List<R> transformDataAsList<R>(BaseResponse response,
-      FutureOr<R> onValue(Map<String, dynamic> json)) {
+      R onValue(Map<String, dynamic> json)) { //FutureOr<R>
     final dataList = response.data as List;
     //final modelList = List<R>(dataList.length);
-    var modelList = []; //List.filled(dataList.length, 0);
+    List<R> modelList = []; //List.filled(dataList.length, 0);
 
     for (int i = 0; i < dataList.length; i++) {
       final data = dataList[i];
       final model = onValue(data);
-      modelList[i] = model;
+      modelList.add(model);
     }
 
-    return modelList as List<R>;
+    return modelList;
   }
 
   /// 转换返回数据为一个本地模型
   static List<R> transformDataList<R>(List data,
-      FutureOr<R> onValue(Map<String, dynamic> json)) {
+      R onValue(Map<String, dynamic> json)) { //FutureOr<R>
     final dataList = data as List;
     //final modelList = List<R>(dataList.length);
-    var modelList = [];
+    List<R> modelList = [];
 
     for (int i = 0; i < dataList.length; i++) {
       final data = dataList[i];
       final model = onValue(data);
-      modelList[i] = model;
+      modelList.add(model);
     }
 
-    return modelList as List<R>;
+    return modelList;
   }
 }
