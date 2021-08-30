@@ -27,7 +27,7 @@ class HeyTeaStyle {
     required Widget child,
     EdgeInsetsGeometry padding: EdgeInsets.zero,
     Color? color,
-    Color disabledColor:CupertinoColors.quaternarySystemFill,
+    Color disabledColor = CupertinoColors.quaternarySystemFill,
     double? minSize,
     double pressedOpacity = 0.4,
     BorderRadius? borderRadius,
@@ -48,7 +48,7 @@ class HeyTeaStyle {
 
   static checkBoxIcon(double size, bool isChecked) {
     final assetName =
-        isChecked ? HeyTeaIcons.check_box_checked : HeyTeaIcons.check_box;
+    isChecked ? HeyTeaIcons.check_box_checked : HeyTeaIcons.check_box;
 
     return Image(
       image: AssetImage(assetName, package: HeyTeaKit.packageName),

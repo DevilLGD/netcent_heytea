@@ -46,3 +46,7 @@ Future<bool> registerWxApi(
       String? universalLink}) async {
   return false;
 }
+
+class WeChatPaymentResponse {
+
+}
