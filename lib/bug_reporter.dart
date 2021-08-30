@@ -34,8 +34,8 @@ class HeyTeaBugReporter {
   }
 
   static init({
-    @required String appId = "",
-    @required bool isDebug = false,
+    String appId = "",
+    bool isDebug = false,
     String appChannel = "",
     String appPackage = "",
     String appVersion = "",
@@ -51,11 +51,12 @@ class HeyTeaBugReporter {
       Bugly.initIosCrashReport(appId: appId);
     }
 
-    Bugly.setAppChannel(appChannel: appChannel);
-    Bugly.setAppPackage(appPackage: appPackage);
+    Bugly.setAndroidAppChannel(appChannel: appChannel);
+    Bugly.setAndroidAppPackage(appPackage: appPackage);
     Bugly.setAppVersion(appVersion: appVersion);
     if (isDevelopmentDevice != null) {
-      Bugly.setIsDevelopmentDevice(isDevelopmentDevice: isDevelopmentDevice);
+      Bugly.setAndroidDeviceId();
+      //Bugly.setIsDevelopmentDevice(isDevelopmentDevice: isDevelopmentDevice);
     }
     if (userSceneTag != null) {
       Bugly.setUserSceneTag(userSceneTag: userSceneTag);
