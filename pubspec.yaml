@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  bugly_crash:
+  #bugly_crash:
     #git:
       # 我们自己fork了一个分支，导出了Bugly的Jar文件
       # https://github.com/DevilLGD/Bugly-Flutter-Plugin
