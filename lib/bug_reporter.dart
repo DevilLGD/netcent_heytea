@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:bugly_crash/bugly.dart';
+//import 'package:bugly_crash/bugly.dart';
 import 'package:flutter/foundation.dart';
 import 'package:heytea_kit/heytea_kit.dart';
 
@@ -42,6 +42,7 @@ class HeyTeaBugReporter {
     bool isDevelopmentDevice = false,
     int userSceneTag = 0,
   }) {
+    /*
     if (Platform.isAndroid) {
       Bugly.initAndroidCrashReport(
         appId: appId,
@@ -61,6 +62,7 @@ class HeyTeaBugReporter {
     if (userSceneTag != null) {
       Bugly.setUserSceneTag(userSceneTag: userSceneTag);
     }
+    */
   }
 
   /// 上报自定义异常.
@@ -75,11 +77,14 @@ class HeyTeaBugReporter {
     String stackTrace = "",
     Map<String, String> extraInfo = const {},
   }) {
+    return Future((){});
+    /*
     return Bugly.postException(
       type: type,
       error: error,
       stackTrace: stackTrace,
       extraInfo: extraInfo,
     );
+    */
   }
 }
