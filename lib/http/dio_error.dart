@@ -4,13 +4,13 @@ extension HeyTeaDioError on DioError {
 
   String toDisplayText() {
     switch (type) {
-      case DioErrorType.connectTimeout:
+      case DioErrorType.connectionTimeout:
         return "连接超时";
       case DioErrorType.sendTimeout:
         return "发送超时";
       case DioErrorType.receiveTimeout:
         return "响应超时";
-      case DioErrorType.response:
+      case DioErrorType.badResponse:
         switch (response?.statusCode) {
           case 400:
             return "400 Bad Request";
@@ -44,7 +44,7 @@ extension HeyTeaDioError on DioError {
         return "请求错误";
       case DioErrorType.cancel:
         return "请求已取消";
-      case DioErrorType.other:
+      case DioErrorType.unknown:
         return "网络异常";
       default:
         return "网络异常";

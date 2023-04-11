@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> {
         primaryColor: Colors.lightBlueAccent,
         textTheme: const TextTheme(
           // 设置Material的默认字体样式
-          body1: TextStyle(color: Colors.white10, fontSize: 16.0),
+          bodyText1: TextStyle(color: Colors.white10, fontSize: 16.0),
         ),
       ),
     );

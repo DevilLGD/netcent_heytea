@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:math';
 import 'dart:ui';
 
@@ -538,7 +539,7 @@ class _CupertinoBackGestureController<T> {
     // If the user releases the page before mid screen with sufficient velocity,
     // or after mid screen, we should animate the page out. Otherwise, the page
     // should be animated back in.
-    if (doubleCompare(velocity.abs(), _kMinFlingVelocity) >= 0)
+    if (velocity.abs() >= _kMinFlingVelocity)
       animateForward = velocity > 0 ? false : true;
     else
       animateForward = controller.value > 0.5 ? true : false;

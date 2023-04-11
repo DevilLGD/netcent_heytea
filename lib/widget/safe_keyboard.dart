@@ -112,7 +112,7 @@ class SafeKeyboard extends StatelessWidget {
     final editor = ValueListenableBuilder<List<String>>(
       valueListenable: inputsNotifier,
       builder: (context, value, child) {
-        return StaggeredGridView.countBuilder(
+        return MasonryGridView.count(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           padding: const EdgeInsets.all(12),
@@ -139,13 +139,13 @@ class SafeKeyboard extends StatelessWidget {
               ),
             );
           },
-          staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
+          //staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
           itemCount: passwordLength,
           crossAxisSpacing: 12,
         );
       },
     );
-    final keyboard = StaggeredGridView.countBuilder(
+    final keyboard = MasonryGridView.count(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: const EdgeInsets.all(12),
@@ -188,14 +188,14 @@ class SafeKeyboard extends StatelessWidget {
           ),
         );
       },
-      staggeredTileBuilder: (index) {
-        if (index == keyList.length - 2) {
-          // 10个数字加上Delete一共11个键，不能排满4行，所以我们给倒数第二行占据两格
-          return const StaggeredTile.fit(2);
-        } else {
-          return const StaggeredTile.fit(1);
-        }
-      },
+      // staggeredTileBuilder: (index) {
+      //   if (index == keyList.length - 2) {
+      //     // 10个数字加上Delete一共11个键，不能排满4行，所以我们给倒数第二行占据两格
+      //     return const StaggeredTile.fit(2);
+      //   } else {
+      //     return const StaggeredTile.fit(1);
+      //   }
+      // },
       itemCount: keyList.length,
       mainAxisSpacing: 12,
       crossAxisSpacing: 12,

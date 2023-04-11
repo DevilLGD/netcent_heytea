@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:dio/dio.dart';
 
 class HeyTeaAPIException implements Exception {
@@ -8,7 +10,7 @@ class HeyTeaAPIException implements Exception {
   const HeyTeaAPIException(this.code, {this.message = ""});
 
   HeyTeaAPIException.fromDioError(DioError dioError) : this(
-      dioError.error,
+      dioError.error is int ? (dioError.error as int) : -1,
       message: dioError.toString()
   );
 

@@ -43,7 +43,7 @@ class ImageViewerPageView extends StatelessWidget {
       color: Colors.transparent,
       child: ExtendedImageGesturePageView.builder(
         scrollDirection: Axis.horizontal,
-        controller: PageController(
+        controller: ExtendedPageController(
           initialPage: initialIndex,
         ),
         onPageChanged: (int index) {

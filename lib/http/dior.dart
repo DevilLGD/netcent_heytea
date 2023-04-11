@@ -31,8 +31,8 @@ class Dior {
     }
 
     final options = BaseOptions(
-      connectTimeout: connectTimeout.inMilliseconds,
-      receiveTimeout: receiveTimeout.inMilliseconds,
+      connectTimeout: connectTimeout,
+      receiveTimeout: receiveTimeout,
       baseUrl: baseUrl,
       responseType: responseType,
       //contentType: contentType,
