@@ -68,8 +68,10 @@ class _MyAppState extends State<MyApp> {
       ],
       title: _appName,
       theme: ThemeData(
-        accentColor: Colors.white10,
-        backgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSwatch(
+          accentColor: Colors.white10,
+          backgroundColor: Colors.white,
+        ),
         iconTheme: const IconThemeData(
           color: Colors.lightBlueAccent,
           size: 35.0,
@@ -77,7 +79,7 @@ class _MyAppState extends State<MyApp> {
         primaryColor: Colors.lightBlueAccent,
         textTheme: const TextTheme(
           // 设置Material的默认字体样式
-          bodyText1: TextStyle(color: Colors.white10, fontSize: 16.0),
+          bodySmall: TextStyle(color: Colors.white10, fontSize: 16.0),
         ),
       ),
     );
