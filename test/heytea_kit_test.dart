@@ -1,23 +1,29 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:heytea_kit/heytea_kit.dart';
+import 'package:heytea_kit/heytea_kit_platform_interface.dart';
+import 'package:heytea_kit/heytea_kit_method_channel.dart';
+import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+
+class MockHeyteaKitPlatform
+    with MockPlatformInterfaceMixin
+    implements HeyteaKitPlatform {
+
+  @override
+  Future<String?> getPlatformVersion() => Future.value('42');
+}
 
 void main() {
-  const MethodChannel channel = MethodChannel('heytea_kit');
+  final HeyteaKitPlatform initialPlatform = HeyteaKitPlatform.instance;
 
-  TestWidgetsFlutterBinding.ensureInitialized();
-
-  setUp(() {
-    channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
-    });
-  });
-
-  tearDown(() {
-    channel.setMockMethodCallHandler(null);
+  test('$MethodChannelHeyteaKit is the default instance', () {
+    expect(initialPlatform, isInstanceOf<MethodChannelHeyteaKit>());
   });
 
   test('getPlatformVersion', () async {
-    expect(await HeyTeaKit.platformVersion, '42');
+    HeyTeaKit heyteaKitPlugin = HeyTeaKit();
+    MockHeyteaKitPlatform fakePlatform = MockHeyteaKitPlatform();
+    HeyteaKitPlatform.instance = fakePlatform;
+
+    expect(await heyteaKitPlugin.getPlatformVersion(), '42');
   });
 }

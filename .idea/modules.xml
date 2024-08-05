@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/netcent_heytea.iml" filepath="$PROJECT_DIR$/.idea/netcent_heytea.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heytea_kit.iml" filepath="$PROJECT_DIR$/heytea_kit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/heytea_kit_android.iml" filepath="$PROJECT_DIR$/android/heytea_kit_android.iml" />
     </modules>
   </component>
 </project>

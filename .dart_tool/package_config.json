@@ -165,15 +165,15 @@
     },
     {
       "name": "extended_image",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/extended_image-8.2.1",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/extended_image-8.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "extended_image_library",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/extended_image_library-4.0.4",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/extended_image_library-3.6.0",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "2.19"
     },
     {
       "name": "fake_async",
@@ -303,9 +303,9 @@
     },
     {
       "name": "js",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/js-0.7.1",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/js-0.6.7",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "2.19"
     },
     {
       "name": "json_annotation",
@@ -489,7 +489,7 @@
     },
     {
       "name": "shared_preferences",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-2.3.0",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-2.3.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -519,7 +519,7 @@
     },
     {
       "name": "shared_preferences_web",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_web-2.4.0",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_web-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -663,7 +663,7 @@
     },
     {
       "name": "video_player_web",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/video_player_web-2.3.1",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/video_player_web-2.3.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -681,9 +681,9 @@
     },
     {
       "name": "web",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/web-0.5.1",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/web-1.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.4"
     },
     {
       "name": "web_socket",
@@ -719,10 +719,10 @@
       "name": "heytea_kit",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.19"
     }
   ],
-  "generated": "2024-08-01T03:34:03.697260Z",
+  "generated": "2024-08-05T07:42:59.501550Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///Users/apple/flutter",

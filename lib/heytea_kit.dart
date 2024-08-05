@@ -3,9 +3,16 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import 'heytea_kit_platform_interface.dart';
+
 export 'package:video_player/video_player.dart';
 
 class HeyTeaKit {
+
+  Future<String?> getPlatformVersion() {
+    return HeyteaKitPlatform.instance.getPlatformVersion();
+  }
+
   static const String packageName = 'heytea_kit';
   static const MethodChannel _channel = const MethodChannel(packageName);
 
