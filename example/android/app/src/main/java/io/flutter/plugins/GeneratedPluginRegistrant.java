@@ -16,14 +16,9 @@ public final class GeneratedPluginRegistrant {
   private static final String TAG = "GeneratedPluginRegistrant";
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     try {
-      flutterEngine.getPlugins().add(new com.example.gd.heytea_kit.HeyteaKitPlugin());
+      flutterEngine.getPlugins().add(new com.laiyou.heytea_kit.HeyteaKitPlugin());
     } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin heytea_kit, com.example.gd.heytea_kit.HeyteaKitPlugin", e);
-    }
-    try {
-      flutterEngine.getPlugins().add(new dev.flutter.plugins.integration_test.IntegrationTestPlugin());
-    } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin integration_test, dev.flutter.plugins.integration_test.IntegrationTestPlugin", e);
+      Log.e(TAG, "Error registering plugin heytea_kit, com.laiyou.heytea_kit.HeyteaKitPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new io.flutter.plugins.packageinfo.PackageInfoPlugin());
